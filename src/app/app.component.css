@@ -1,0 +1,10 @@
+.btn-delete{
+    color: chocolate;
+    cursor: pointer;
+}
+.checkbox{
+    flex: 1 1 auto;
+}
+.archived .md-checkbox-layout .md-checkbox-label{
+    text-decoration: line-through !important;
+}

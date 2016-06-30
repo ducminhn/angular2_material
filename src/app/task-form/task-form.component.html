@@ -1,0 +1,4 @@
+<form [ngFormModel]="taskForm" (submit)="addTask($event)">    
+    <md-input type="text" required ngControl="task" placeholder="Add new task"></md-input><br/>
+    <button md-button type="submit" md-raised-button color="primary">Add Task</button>
+</form>

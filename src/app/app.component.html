@@ -3,9 +3,20 @@
 		<md-button class="app-icon-button">
 			<i class="material-icons app-toolbar-menu">menu</i>
 		</md-button>
-		Angular Material2 Example App
+		{{ title }}
 		<span class="app-toolbar-filler"></span>
 	</md-toolbar>
-	<button md-raised-button color="primary">Click me!</button>
-	<button md-fab><i class="material-icons app-toolbar-menu">menu</i></button>
+	<md-card>	
+		<md-list>
+			<md-subheader class="md-no-sticky">
+				<h1>Minh's Todo List ({{ totalItems }} items)</h1>
+				<p>Remaining items: {{ remainingItems }}</p>
+			</md-subheader>
+			<md-list-item class="md-2-line" *ngFor="let item of items | async">
+				<md-checkbox class="checkbox" [ngClass]="item.isDone ? 'archived' : ''" [(ngModel)]="item.isDone" (click)="toggleTask(item)">{{item.name}}</md-checkbox>
+				<md-icon class="btn-delete" (click)="deleteTask(item)">delete</md-icon>
+			</md-list-item>
+			<task-form></task-form>
+		</md-list>		
+    </md-card>
 </md-content>

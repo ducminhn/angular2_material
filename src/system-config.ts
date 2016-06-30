@@ -7,11 +7,17 @@
  **********************************************************************************************/
 /** Map relative paths to URLs. */
 const map: any = {
-  '@angular2-material': 'vendor/@angular2-material'
+  '@angular2-material': 'vendor/@angular2-material',
+  'firebase': 'vendor/firebase/firebase.js',
+  'angularfire2': 'vendor/angularfire2'
 };
 
 /** User packages configuration. */
 const packages: any = {
+  angularfire2: {
+    defaultExtension: 'js',
+    main: 'angularfire2.js'
+  }
 };
 
 // put the names of any of your Material components here
@@ -21,6 +27,11 @@ const materialPkgs:string[] = [
   'card',
   'toolbar',
   'icon',
+  'card',
+  'input',
+  'checkbox',
+  'list',
+  'tabs',
 ];
 
 materialPkgs.forEach((pkg) => {
@@ -47,6 +58,7 @@ const barrels: string[] = [
   // App specific barrels.
   'app',
   'app/shared',
+  'app/task-form',
   /** @cli-barrel */
 ];
 
